@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * { -webkit-tap-highlight-color: transparent; }
+  body { overscroll-behavior: none; }
+  ::-webkit-scrollbar { width: 6px; }
+  ::-webkit-scrollbar-track { background: transparent; }
+  ::-webkit-scrollbar-thumb { background: #D4B89E; border-radius: 10px; }
+  ::-webkit-scrollbar-thumb:hover { background: #C38D9E; }
+}
+
+@layer components {
+  .glass-panel {
+    @apply bg-white/40 backdrop-blur-md border border-warm-100/60;
+  }
+  .input-elegant {
+    @apply w-full px-4 py-3 bg-white/60 border border-warm-200/70 rounded-xl 
+           focus:outline-none focus:ring-2 focus:ring-rose-gold/40 focus:border-transparent
+           placeholder:text-warm-400 text-warm-800 transition-all duration-300;
+  }
+  .btn-primary {
+    @apply px-6 py-3 bg-gradient-to-r from-rose-gold to-terracotta text-white
+           rounded-xl font-medium shadow-lg shadow-rose-gold/20 hover:shadow-xl 
+           hover:shadow-terracotta/30 active:scale-[0.97] transition-all duration-300;
+  }
+  .btn-secondary {
+    @apply px-6 py-3 bg-white/70 border border-warm-200 text-warm-700
+           rounded-xl font-medium hover:bg-warm-50 active:scale-[0.97] 
+           transition-all duration-300;
+  }
+}
